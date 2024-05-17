@@ -4,41 +4,41 @@ global Point1 := {x: 0, y: 0}
 global Point2 := {x: 0, y: 0}
 global Point3 := {x: 0, y: 0}
 
-à::  ; Key to store Point 1
+SC029:: ; Key to store Point 1
 {
-    MouseGetPos &Point1.x, &Point1.y
+    MouseGetPos, Point1.x, Point1.y
     MsgBox "Point 1 stored at: " . Point1.x . ", " . Point1.y
 }
 
-ç::  ; Key to store Point 2
+SC027:: ; Key to store Point 2
 {
-    MouseGetPos &Point2.x, &Point2.y
+    MouseGetPos, Point2.x, Point2.y
     MsgBox "Point 2 stored at: " . Point2.x . ", " . Point2.y
 }
 
-!::  ; Key to store Point 3
+SC00C:: ; Key to store Point 3
 {
-    MouseGetPos &Point3.x, &Point3.y
+    MouseGetPos, Point3.x, Point3.y
     MsgBox "Point 3 stored at: " . Point3.x . ", " . Point3.y
 }
 
-è::  ; Key to move the cursor to Point 3, click, and reset mouse to center
+SC00E:: ; Key to move the cursor to Point 3, click, and reset mouse to center
 {
-    MouseMove Point3.x, Point3.y
+    MouseMove, Point3.x, Point3.y
     Click
     CenterMouse()
 }
 
-§::  ; Key to move the cursor to Point 1, click, move to Point 2, click, and reset mouse to center
+SC02B:: ; Key to move the cursor to Point 1, click, move to Point 2, click, and reset mouse to center
 {
-    MouseMove Point1.x, Point1.y
+    MouseMove, Point1.x, Point1.y
     Click
-    MouseMove Point2.x, Point2.y
+    MouseMove, Point2.x, Point2.y
     Click
     CenterMouse()
 }
 
 CenterMouse() {
-    SysGet MonitorPrimary, Monitor
-    MouseMove MonitorPrimary.Right // 2, MonitorPrimary.Bottom // 2
+    SysGet, MonitorPrimary, Monitor
+    MouseMove, MonitorPrimary.Right // 2, MonitorPrimary.Bottom // 2
 }
